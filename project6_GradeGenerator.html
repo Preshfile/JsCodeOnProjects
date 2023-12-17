@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group 4 Grade Generator</title>
+
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      form {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #show {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 3. Title: Grade Generator Case Study
+    Objective:
+    The objective of this case study is to create a JavaScript program that prompts the user to enter a numeric score (between 1 and 100) and generates a corresponding letter grade using if statements.
+    Requirements:
+    Create an HTML file with a simple form that takes a student's score as input.
+    Use JavaScript to  evaluate the score, and assign a letter grade based on the following criteria:
+    A: 90-100
+    B: 80-89
+    C: 70-79
+    D: 60-69
+    F: 0-59
+    
+    Ensure that the program handles invalid inputs gracefully (e.g., scores less than 0 or greater than 100) and provides appropriate feedback to the user.
+    Display the generated letter grade on the webpage. -->
+
+    <form id="studentGradeForm">
+      <h1 style="text-align: center">Project: Grade Generator</h1>
+      
+      <label for="score">Enter your score:</label>
+      <input type="number" id="score" min="0" max="100" required />
+      <button type="button" onclick="generateGrade()">Generate Grade</button>
+      <div id="show"></div>
+    </form>
+
+    <script>
+      var studentScore = document.getElementById("score");
+      var showGrade = document.getElementById("show");
+
+      function generateGrade() {
+        var myScore = parseInt(studentScore.value);
+
+        if (myScore < 0 || myScore > 100 || isNaN(myScore)) {
+          showGrade.style.color = "red";
+          showGrade.innerHTML = "invalid! Please enter 0 - 100";
+        } else {
+          if (myScore >= 90 && myScore <= 100) {
+            showGrade.innerHTML = "A";
+          } else if (myScore >= 80 && myScore <= 89) {
+            showGrade.innerHTML = "B";
+          } else if (myScore >= 70 && myScore <= 79) {
+            showGrade.innerHTML = "C";
+          } else if (myScore >= 60 && myScore <= 69) {
+            showGrade.innerHTML = "D";
+          } else if (myScore >= 0 && myScore <= 59) {
+            showGrade.innerHTML = "F";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

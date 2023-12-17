@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Name List1 </title>
+
+    <style>
+      #names,
+      #add {
+        padding: 20px;
+        font-size: 30px;
+      }
+      li {
+        padding: 10px;
+        font-size: 30px;
+        padding-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- complete the project by writing a code to populate the list with names. 
+    Then names should be stored and displayed from an array -->
+    <input type="text" id="names" /><button id="add" onclick="addNamesItem()">
+      Add
+    </button>
+
+    <div class="container">
+      <ul id="nameList"></ul>
+    </div>
+
+    <script>
+      var getNames = document.getElementById("names");
+      var addNames = document.getElementById("add");
+      var nameListOutput = document.getElementById("nameList");
+
+      var arrayOfNames = [];
+
+      const addNamesItem = function () {
+        var nameEntered = getNames.value;
+        arrayOfNames.push(nameEntered);
+        getNames.value = "";
+
+        renderNamesListOutput();
+      };
+
+      const renderNamesListOutput = function () {
+        nameListOutput.innerHTML = "";
+
+        // Populate
+        arrayOfNames.forEach(function (name) {
+          var listItem = document.createElement("li");
+          listItem.textContent = name;
+          nameListOutput.appendChild(listItem);
+        });
+      };
+    </script>
+  </body>
+</html>

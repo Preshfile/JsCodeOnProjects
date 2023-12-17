@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GROUP 2 TASK</title>
+    <style>
+      body {
+        background-color: rgb(95, 87, 87);
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        background-color: #ddd;
+        width: 800px;
+        height: 80vh;
+        border-radius: 10px;
+        margin-top: 30px;
+      }
+
+      .centered {
+        text-align: center;
+      }
+      input {
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .addButton {
+        padding: 7px 15px;
+        background-color: #24a0ed;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      li {
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      
+
+      .deleteButton {
+        margin-left: 10px;
+        border-radius: 10px;
+        border: 1px solid blue;
+        cursor: pointer;
+        padding: 7px;
+      }
+
+      .showDelete {
+        display: inline;
+      }
+      .hideDelete {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="centered">
+        <p class="label">
+          <label for="names">Enter Name:</label>
+        </p>
+        <p id="inputBox">
+          <input type="text" id="names" />
+        </p>
+
+        <p>
+          <button class="addButton" id="add">Add</button>
+        </p>
+      </div>
+      <ul id="list">
+        <h2>Name List:</h2>
+      </ul>
+    </div>
+            
+        </div>
+    </div>
+
+    <script>
+        let getName = document.getElementById("names")
+        let addButton = document.getElementById("add")
+        let ulList = document.getElementById("list")
+        let arrayNames = []
+
+        addButton.addEventListener('click', function (){
+            arrayNames.push(getName.value)
+            console.log(arrayNames);
+            pushToList(arrayNames);
+        });
+
+        pushToList = (pushedNames) => {
+            let li = document.createElement("li")
+            let deleteButton = document.createElement("button")
+            
+            deleteButton.setAttribute('class', "deleteButton hideDelete")
+            deleteButton.textContent = "Delete"
+
+            let showDelete = false;
+            
+            let i = 0;
+
+            while(pushedNames.length > i) {
+                li.textContent = pushedNames[i]
+                i++;
+            }
+            ulList.appendChild(li)
+
+            li.onclick = function () {
+                console.log(arrayNames)
+                console.log(li.textContent)
+                li.appendChild(deleteButton)
+                deleteButton.classList.toggle("showDelete")
+                deleteButton.classList.toggle("hideDelete")
+            }
+
+           deleteButton.onclick = function () {
+            li.remove()
+            
+           }
+
+           
+        }
+
+
+
+    </script>
+</body>
+</html>
