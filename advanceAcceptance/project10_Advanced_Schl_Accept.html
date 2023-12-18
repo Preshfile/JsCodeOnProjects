@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="adAcceptance.js" defer></script>
+    <link rel="stylesheet" href="adAcceptance.css">
+    <title>Document</title>
+  
+  </head>
+  <body>
+    <!-- 
+    Title: Advanced School Acceptance System Case Study
+        Objective:
+        The objective of this case study is to create 
+        an advanced JavaScript program for a School Acceptance System. 
+        
+        The system will take a student's accumulated score, grade, 
+        and their choice of program as input and determine 
+        whether the student is accepted into the chosen program 
+        based on the following criteria:
+
+        Accumulated Score Requirement: Minimum of 800.
+        For Science program: Requires a minimum grade of 85.
+        For Arts program: Requires a minimum grade of 75.
+        For Commerce program: Requires a minimum grade of 80.
+        Requirements:
+        Create an HTML file with a form that takes the student's accumulated score, grade, and choice of program as input.
+        Write JavaScript code to process the user's input and display whether the student is accepted into the chosen program based on the new criteria.
+        Implement error handling and user-friendly messages for invalid inputs or unexpected scenarios (e.g., negative score or grade, non-numeric inputs, or an invalid choice of program).
+        Display the result on the webpage indicating whether the student is accepted into the chosen program or not. 
+    -->
+
+    <div class="container">
+      <label for="grade">Your Grade</label>
+      <input
+        type="number"
+        id="grade"
+        name="grade"
+        placeholder="Enter Grade"
+        required
+      />
+
+      <label for="accumulatedScore"> Accumulated Score</label>
+      <input
+        type="number"
+        id="accumulatedScore"
+        name="accumulatedScore"
+        placeholder="Enter Score"
+        required
+      />
+
+      <label for="program">Program</label>
+      <select name="" id="program" required>
+        <option value="" disabled selected>Select a program</option>
+        <option value="Art">Art</option>
+        <option value="Commerce">Commerce</option>
+        <option value="Science">Science</option>
+      </select>
+
+      <label for="status">Status</label>
+      <div id="status"></div>
+      <button type="submit" onclick="acceptanceSystem()">Check</button>
+    </div>
+
+  </body>
+</html>

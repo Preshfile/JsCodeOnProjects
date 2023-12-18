@@ -1,0 +1,124 @@
+ body {
+     background-color: #e6e6fa;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+     font-family: "Roboto", sans-serif;
+ }
+
+ #pianoContainer {
+     border: 1px solid rgb(15, 15, 15);
+     border-radius: 15px;
+     background-color: rgb(15, 15, 15);
+     box-shadow: inset 0 4px 0 4px rgb(15, 15, 15),
+         inset 0 0 10px 2px rgba(255, 255, 255, 0.651),
+         inset -4px 0 10px 2px rgba(255, 255, 255, 0.184);
+     position: relative;
+ }
+
+ #piano {
+     display: flex;
+     margin: 20px;
+     margin-top: 5px;
+ }
+
+ .control {
+     display: flex;
+     justify-content: space-around;
+     color: white;
+     padding-top: 20px;
+ }
+
+ .fas {
+     color: white;
+     margin-right: 10px;
+     font-size: 20px;
+ }
+
+ .key {
+     width: 80px;
+     height: 260px;
+     border: 1px solid rgb(15, 15, 15);
+     background-color: #fff;
+     position: relative;
+     border-radius: 7px;
+     box-shadow: inset 0 4px 0 0 rgb(224, 223, 223);
+     text-align: end;
+ }
+
+ .key span {
+     position: absolute;
+     bottom: 5px;
+     right: 50%;
+ }
+
+ .black-key {
+     width: 35px;
+     height: 150px;
+     background-color: rgb(15, 15, 15);
+     position: absolute;
+     z-index: 1;
+     top: 20;
+     border-radius: 5px;
+     box-shadow: inset 0 4px 0 4px rgb(15, 15, 15);
+ }
+
+ .black-key span {
+     position: absolute;
+     bottom: 5px;
+     right: 50%;
+     transform: translateX(50%);
+     color: white;
+ }
+
+ .black1 {
+     left: 85px;
+ }
+
+ .black2 {
+     left: 168px;
+ }
+
+ .black3 {
+     left: 330px;
+ }
+
+ .black4 {
+     left: 415px;
+ }
+
+ .black5 {
+     left: 495px;
+ }
+
+ .black6 {
+     left: 660px;
+ }
+
+ .black7 {
+     left: 740px;
+ }
+
+ .black8 {
+     left: 905px;
+ }
+
+ .black9 {
+     right: 166px;
+ }
+
+ .black10 {
+     right: 84px;
+ }
+
+ .key {
+     transition: transform 0.2s ease;
+ }
+
+ .key-clicked {
+     background-color: #ffc107;
+     transform: scale(0.95);
+     transition: background-color 0.2s ease, transform 0.2s ease;
+ }

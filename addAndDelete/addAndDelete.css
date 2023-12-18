@@ -1,0 +1,52 @@
+ body {
+     background-color: rgb(95, 87, 87);
+     display: flex;
+     justify-content: center;
+ }
+
+ .container {
+     background-color: #ddd;
+     width: 800px;
+     height: 80vh;
+     border-radius: 10px;
+     margin-top: 30px;
+ }
+
+ .centered {
+     text-align: center;
+ }
+
+ input {
+     border-radius: 5px;
+     padding: 10px;
+ }
+
+ .addButton {
+     padding: 7px 15px;
+     background-color: #24a0ed;
+     border: none;
+     border-radius: 7px;
+     cursor: pointer;
+ }
+
+ li {
+     cursor: pointer;
+     margin-top: 20px;
+ }
+
+
+ .deleteButton {
+     margin-left: 10px;
+     border-radius: 10px;
+     border: 1px solid blue;
+     cursor: pointer;
+     padding: 7px;
+ }
+
+ .showDelete {
+     display: inline;
+ }
+
+ .hideDelete {
+     display: none;
+ }
